@@ -1,0 +1,72 @@
+docker run
+docker pull
+docker images
+docker ps -a - shows you all containers that are currently running
+docker run -it - attaches us to an interactive tty in the container
+docker rm IDoFDocker - delete contoainer
+docker container prune - delete all containers that jave a status of exited
+docker image rm ime_image - delete image
+
+
+DockerFile - is a simple text file that contains a list of commands that the Docker client calls while creating an image.
+
+docker build -t imeImagea:verzija folder_u_kojem_je_dockerfile
+
+docker build -t mojImage /home
+
+
+
+Pokretanje dockera
+docker run --name ubuntuvpn -v /openvpnconfig/:/openvpn -p 8000:8118 --device=/dev/net/tun --cap-add=NET_ADMIN -it noviubuntuvpn
+
+
+
+
+https://serverfault.com/questions/1141551/privoxy-and-openvpn-in-docker
+
+
+https://pimylifeup.com/raspberry-pi-proxy-using-privoxy/
+
+
+
+Dodati u docker file
+wget
+net-tools
+
+
+
+
+
+
+
+
+docker run -d --device=/dev/net/tun --cap-add=NET_ADMIN \
+	--dns=1.1.1.1 --dns=1.0.0.1 \
+    -e "OPENVPN_FILENAME=rfr_us-sea.prod.surfshark.com_tcp.ovpn" \
+    -e "LOCAL_NETWORK=10.0.0.0/24" \
+    -e "ONLINECHECK_DELAY=900" \
+    -v /openvpnconfig:/app/ovpn/config \
+    -p 8080:8080 \
+    andymeful/privoxy-openvpn
+
+docker run --platform linux/arm/v7 -d --device=/dev/net/tun --cap-add=NET_ADMIN \
+	--dns=1.1.1.1 --dns=1.0.0.1 \
+    -e "OPENVPN_FILENAME=rfr_us-sea.prod.surfshark.com_tcp.ovpn" \
+    -e "LOCAL_NETWORK=192.168.1.0/24" \
+    -e "ONLINECHECK_DELAY=900" \
+    -v ./openvpn-config:/app/ovpn/config \
+    -p 8080:8080 \
+    andymeful/privoxy-openvpn
+
+
+
+sudo docker run --name proxy_1000112 -v /openvpnconfig/:/openvpn --device=/dev/net/tun -p 10001:1080 --cap-add=NET_ADMIN -e "OPENVPN_CONFIG_FILE=/openvpn/rpl_au-bne.prod.surfshark.com_tcp.ovpn" -e "OPENVPN_USERNAME=YD4Vw5gKQfvdwa4q2jByWZN7" -e "OPENVPN_PASSWORD=6tKPGdcHsqTAjyVNLtK3P6A8" -d jonoh/openvpn-socks
+
+Ubuntu Oracle
+sudo docker run --name proxy_10010 -v /home/ubuntu/Documents/openvpnconfig/:/openvpn --device=/dev/net/tun -p 10010:1080 --cap-add=NET_ADMIN -e "OPENVPN_CONFIG_FILE=/openvpn/rpl_is-rkv.prod.surfshark.com_tcp.ovpn" -e "OPENVPN_USERNAME=YD4Vw5gKQfvdwa4q2jByWZN7" -e "OPENVPN_PASSWORD=6tKPGdcHsqTAjyVNLtK3P6A8" -d jonoh/openvpn-socks
+
+
+sudo docker run --name proxy_10002 -v /home/noname/Downloads/openvpnconfig/:/openvpn --device=/dev/net/tun -p 10002:1080 --cap-add=NET_ADMIN -e "OPENVPN_CONFIG_FILE=/openvpn/rie_ee-tll.prod.surfshark.com_tcp.ovpn" -e "OPENVPN_USERNAME=YD4Vw5gKQfvdwa4q2jByWZN7" -e "OPENVPN_PASSWORD=6tKPGdcHsqTAjyVNLtK3P6A8" -d jonoh/openvpn-socks
+
+
+curl --socks5 "127.0.0.1:10002" "https://api.ipify.org/"

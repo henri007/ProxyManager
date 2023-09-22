@@ -1,0 +1,5 @@
+{
+"path_to_Vpn_config_files":"/home/noname/Downloads/openvpnconfig/",
+"vpn_username":"YD4Vw5gKQfvdwa4q2jByWZN7",
+"vpn_password":"6tKPGdcHsqTAjyVNLtK3P6A8"
+}
