@@ -43,6 +43,24 @@ public class Settings {
         }
     }
 
+    public static String rumCommandWithResponse(String command){
+        try{
+            ProcessBuilder pb = new ProcessBuilder()
+                    .command("bash", "-c", command);
+            Process p = pb.start();
+            p.waitFor();
+            BufferedReader stdInput = new BufferedReader(new InputStreamReader(p.getInputStream()));
+            String s;
+            while ((s = stdInput.readLine()) != null) {
+                return s;
+            }
+        } catch (Exception e){
+            System.out.println(e.getMessage());
+            return e.getMessage();
+        }
+        return "null";
+    }
+
     private static void initializeSettingsFile(){
         File myFile = new File("settings.txt");
         ObjectMapper objectMapper = new ObjectMapper();

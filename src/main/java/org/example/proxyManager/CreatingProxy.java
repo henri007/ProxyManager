@@ -15,8 +15,6 @@ public class CreatingProxy {
         int[] ports = generatePorts(numberOfProxies);
 
         for(int i=0; i<numberOfProxies;i++){
-            System.out.println(runContainerString(Settings.vpnConfigFiles.get(i),ports[i]));
-            System.out.println("-----------------------------------");
             Settings.runCommand(runContainerString(Settings.vpnConfigFiles.get(i),ports[i]));
         }
 

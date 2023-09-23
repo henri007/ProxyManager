@@ -69,4 +69,9 @@ sudo docker run --name proxy_10010 -v /home/ubuntu/Documents/openvpnconfig/:/ope
 sudo docker run --name proxy_10002 -v /home/noname/Downloads/openvpnconfig/:/openvpn --device=/dev/net/tun -p 10002:1080 --cap-add=NET_ADMIN -e "OPENVPN_CONFIG_FILE=/openvpn/rie_ee-tll.prod.surfshark.com_tcp.ovpn" -e "OPENVPN_USERNAME=YD4Vw5gKQfvdwa4q2jByWZN7" -e "OPENVPN_PASSWORD=6tKPGdcHsqTAjyVNLtK3P6A8" -d jonoh/openvpn-socks
 
 
+
+sudo docker container inspect -f '{{.State.Status}}' c610862d457fd75ec8b876bcf3a41f011ee57f11de5366f50936bb83317e2900
+
+
+
 curl --socks5 "127.0.0.1:10002" "https://api.ipify.org/"
