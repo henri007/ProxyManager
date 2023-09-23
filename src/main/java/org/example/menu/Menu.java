@@ -1,5 +1,7 @@
 package org.example.menu;
 
+import org.example.settings.Settings;
+
 import java.util.Scanner;
 
 public class Menu {
@@ -23,7 +25,11 @@ public class Menu {
             else if(choise.equals("2")){
                 System.out.println("Izabrali ste nadzor nad proxyima");
             } else if (choise.equals("3")) {
-                menuItems.stopAndDeleteAllContainers();
+                menuItems.menuStopAndDeleteAllContainers();
+            }else if(choise.equals("4")){
+                menuItems.displayRuningContainers();
+            }else if(choise.equals("5")){
+                menuItems.displayAllContainers();
             }
             else if (choise.equals("exit")){
 
@@ -37,9 +43,11 @@ public class Menu {
 
     private void displayMenuItems(){
         System.out.println("Izaberite radnju: ");
-        System.out.println("1. Pokrenite proxy containere");
+        System.out.println("1. Pokrenite proxy containere (maximalni broj: "+ Settings.numberOfConfigFilesInArray+")");
         System.out.println("2. Pokrenite nazdor nad containerima");
         System.out.println("3. Zaustavite i izbrišite sve containere");
+        System.out.println("4. Prikaži pokrenute containere: ");
+        System.out.println("5. Prikaži SVE containere: ");
         System.out.println("Za izlazak unesite \"exit\"");
         System.out.print("Odabir: ");
     }
