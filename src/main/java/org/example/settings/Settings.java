@@ -2,6 +2,7 @@ package org.example.settings;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.InputStreamReader;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -43,7 +44,7 @@ public class Settings {
         }
     }
 
-    public static String rumCommandWithResponse(String command){
+    public static String runProxyContainerWithResponse(String command){
         try{
             ProcessBuilder pb = new ProcessBuilder()
                     .command("bash", "-c", command);
@@ -60,6 +61,8 @@ public class Settings {
         }
         return "null";
     }
+
+
 
     private static void initializeSettingsFile(){
         File myFile = new File("settings.txt");

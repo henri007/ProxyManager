@@ -1,7 +1,11 @@
 package org.example.proxyManager;
 
+
+import org.example.logManager.LogManager;
+import org.example.logManager.ProxyContainer;
 import org.example.settings.Settings;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Random;
 
@@ -12,10 +16,16 @@ public class CreatingProxy {
 
     //govorimo koliko proxya želimo napraviti
     public void createProxy(int numberOfProxies){
+        //Stvara onoliko portova koliko je proslijeđeno u funkciju (numberOfProxies), počevši od 10000
         int[] ports = generatePorts(numberOfProxies);
 
+
+
         for(int i=0; i<numberOfProxies;i++){
-            Settings.runCommand(runContainerString(Settings.vpnConfigFiles.get(i),ports[i]));
+            //Settings.runCommand(runContainerString(Settings.vpnConfigFiles.get(i),ports[i]));
+            String idOfStartedContainer=Settings.runProxyContainerWithResponse(runContainerString(Settings.vpnConfigFiles.get(i),ports[i]));
+            System.out.println(idOfStartedContainer);
+
         }
 
 
