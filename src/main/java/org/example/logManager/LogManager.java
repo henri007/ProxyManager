@@ -1,5 +1,8 @@
 package org.example.logManager;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.io.File;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -20,17 +23,20 @@ public class LogManager {
 
     }
 
-    public static void saveToProxyPorts_txt(String whatToSave){
+
+    public static void saveToProxyPorts_txt(ProxyPorts proxyPorts){
+        ObjectMapper objectMapper = new ObjectMapper();
+
+
         try{
-            FileWriter fileWriter = new FileWriter(pathToProxyPorts_txt);
-            fileWriter.write(whatToSave);
-            fileWriter.close();
+            objectMapper.writeValue(new File(pathToProxyPorts_txt), proxyPorts);
+            System.out.println("Uspješno zapisano u "+pathToProxyPorts_txt);
         }catch (Exception e){
             System.out.println(e.getMessage());
         }
 
     }
-    }
+
     public static void deleteAllInProxyPorts_txt(){
         try{
             new PrintWriter(pathToProxyPorts_txt).close();
