@@ -23,7 +23,7 @@ public class Menu {
                 menuItems.menuCreateProxy();
             }
             else if(choise.equals("2")){
-                System.out.println("Izabrali ste nadzor nad proxyima");
+                menuItems.monitorDockers();
             } else if (choise.equals("3")) {
                 menuItems.menuStopAndDeleteAllContainers();
             }else if(choise.equals("4")){

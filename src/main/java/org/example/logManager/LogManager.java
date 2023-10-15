@@ -24,12 +24,12 @@ public class LogManager {
     }
 
 
-    public static void saveToProxyPorts_txt(ProxyPorts proxyPorts){
+    public static void saveToProxyPorts_txt(ProxyContainerManager proxyContainerManager){
         ObjectMapper objectMapper = new ObjectMapper();
 
 
         try{
-            objectMapper.writeValue(new File(pathToProxyPorts_txt), proxyPorts);
+            objectMapper.writeValue(new File(pathToProxyPorts_txt), proxyContainerManager);
             System.out.println("Uspješno zapisano u "+pathToProxyPorts_txt);
         }catch (Exception e){
             System.out.println(e.getMessage());

@@ -5,9 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ecc83bf3-82a4-4ef3-9e4c-a15bd3f137a8" name="Changes" comment="24092023-12:40">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/proxyManager/MonitorDockers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProxyPorts.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProxyPorts.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.txt" beforeDir="false" afterPath="$PROJECT_DIR$/settings.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/logManager/LogManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/logManager/LogManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/logManager/ProxyPorts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/logManager/ProxyPorts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/logManager/ProxyContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/logManager/ProxyContainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/logManager/ProxyPorts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/logManager/ProxyContainerManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/menu/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/menu/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/menu/MenuItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/menu/MenuItems.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/proxyManager/CreatingProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/proxyManager/CreatingProxy.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

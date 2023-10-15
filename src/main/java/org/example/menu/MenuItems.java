@@ -1,6 +1,7 @@
 package org.example.menu;
 
 import org.example.proxyManager.CreatingProxy;
+import org.example.proxyManager.MonitorDockers;
 import org.example.proxyManager.StopAndDeleteContainers;
 import org.example.settings.Settings;
 
@@ -8,6 +9,7 @@ import java.util.Scanner;
 
 public class MenuItems {
 
+    //Menu Izbor broj 1
     public void menuCreateProxy(){
 
         CreatingProxy createProxy = new CreatingProxy();
@@ -23,6 +25,12 @@ public class MenuItems {
         }
     }
 
+    //Menu Izbor broj 2
+    public void monitorDockers(){
+        MonitorDockers monitorDockers = new MonitorDockers();
+        monitorDockers.startMonitor();
+    }
+    //Menu izbor broj 3
     public void menuStopAndDeleteAllContainers(){
         StopAndDeleteContainers stop = new StopAndDeleteContainers();
         stop.stopAndDeleteAllContainers();
@@ -31,11 +39,13 @@ public class MenuItems {
         pressAnyKeyToContinue();
     }
 
+    //Menu izbor broj 4
     public void displayRuningContainers(){
         Settings.runCommand("sudo docker ps");
         pressAnyKeyToContinue();
     }
 
+    //Menu izbor broj 5
     public void displayAllContainers(){
         Settings.runCommand("sudo docker ps -a");
         pressAnyKeyToContinue();

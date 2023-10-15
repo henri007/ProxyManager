@@ -1,14 +1,12 @@
 package org.example.logManager;
 
-import org.example.logManager.ProxyContainer;
-
 import java.util.ArrayList;
 
-public class ProxyPorts {
+public class ProxyContainerManager {
 
-    private ArrayList<ProxyContainer> proxyContainers;
+    public static ArrayList<ProxyContainer> proxyContainers;
 
-    public ProxyPorts(){
+    public ProxyContainerManager(){
         proxyContainers = new ArrayList<ProxyContainer>();
     }
 
