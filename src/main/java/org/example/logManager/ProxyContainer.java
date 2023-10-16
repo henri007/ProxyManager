@@ -26,8 +26,5 @@ public class ProxyContainer {
         this.port = port;
     }
 
-    @Override
-    public String toString(){
-        return id+" - "+port;
-    }
+
 }

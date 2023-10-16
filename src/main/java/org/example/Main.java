@@ -3,6 +3,8 @@ package org.example;
 import org.example.menu.Menu;
 import org.example.proxyManager.CreatingProxy;
 import org.example.settings.Settings;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.Arrays;
 
@@ -13,6 +15,7 @@ public class Main {
 
         Menu menu = new Menu();
         menu.mainMenu();
+
 
 
 

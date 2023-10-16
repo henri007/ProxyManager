@@ -1,5 +1,8 @@
 package org.example.menu;
 
+import org.example.logManager.ProxyContainer;
+import org.example.logManager.ProxyContainerManager;
+import org.example.proxyCheck.CheckProxies;
 import org.example.proxyManager.CreatingProxy;
 import org.example.proxyManager.MonitorDockers;
 import org.example.proxyManager.StopAndDeleteContainers;
@@ -26,9 +29,9 @@ public class MenuItems {
     }
 
     //Menu Izbor broj 2
-    public void monitorDockers(){
-        MonitorDockers monitorDockers = new MonitorDockers();
-        monitorDockers.startMonitor();
+    public void checkRunningProxy(){
+        CheckProxies checkProxies = new CheckProxies();
+        checkProxies.testStart();
     }
     //Menu izbor broj 3
     public void menuStopAndDeleteAllContainers(){
@@ -41,14 +44,21 @@ public class MenuItems {
 
     //Menu izbor broj 4
     public void displayRuningContainers(){
-        Settings.runCommand("sudo docker ps");
+        Settings.runCommand("docker ps");
         pressAnyKeyToContinue();
     }
 
     //Menu izbor broj 5
     public void displayAllContainers(){
-        Settings.runCommand("sudo docker ps -a");
+        Settings.runCommand("docker ps -a");
         pressAnyKeyToContinue();
+    }
+
+    //Meni izbor broj 6
+    public void printAllContainers(){
+        for(ProxyContainer proxyContainer : ProxyContainerManager.proxyContainers){
+            System.out.println(proxyContainer.getPort());
+        }
     }
 
     private void pressAnyKeyToContinue(){

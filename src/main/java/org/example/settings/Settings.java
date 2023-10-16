@@ -20,6 +20,7 @@ public class Settings {
 
     public static ArrayList<String> vpnConfigFiles = new ArrayList<String>();
 
+    public static final String ADDRESS_OF_PROXY_SERVER="127.0.0.1";
     public static void initalizeSettings(){
 
         initializeSettingsFile();

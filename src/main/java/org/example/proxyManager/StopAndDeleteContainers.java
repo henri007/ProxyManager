@@ -12,10 +12,10 @@ public class StopAndDeleteContainers {
         LogManager.deleteAllInProxyPorts_txt();
     }
     private void killAllContainers(){
-        Settings.runCommand("sudo docker kill $(sudo docker ps -q)");
+        Settings.runCommand("docker kill $(docker ps -q)");
     }
 
     private void deleteAllStoppedContainers(){
-        Settings.runCommand("sudo docker container prune -f");
+        Settings.runCommand("docker container prune -f");
     }
 }
