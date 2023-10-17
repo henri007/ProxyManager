@@ -6,10 +6,12 @@ import org.example.logManager.ProxyContainer;
 import org.example.logManager.ProxyContainerManager;
 import org.example.settings.Settings;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.PageLoadStrategy;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.firefox.*;
+
+import java.io.File;
+import java.nio.file.Path;
 
 public class CheckProxies {
 
@@ -21,15 +23,14 @@ public class CheckProxies {
 
         for(ProxyContainer proxyContainer : ProxyContainerManager.proxyContainers){
             FirefoxDriver driver = getFirefoxDriver(Settings.ADDRESS_OF_PROXY_SERVER,proxyContainer.getPort());
+            Cookie azlyricsCookie= driver.manage().getCookieNamed("_GRECAPTCHA");
+            System.out.println(azlyricsCookie.toString());
             if(isProxyWorkingOnAZLyrics(driver)){
                 System.out.println(proxyContainer.getPort()+" radi");
             }else{
                 System.out.println(proxyContainer.getPort()+" ne radi");
             }
-
         }
-
-
     }
 
 
@@ -53,6 +54,7 @@ public class CheckProxies {
         profile.setPreference("network.proxy.socks", proxyAddress);
         profile.setPreference("network.proxy.socks_port", proxyPort);
 
+        profile.addExtension(new File("foxyproxy.xpi"));
         FirefoxOptions options = new FirefoxOptions();
         options.setPageLoadStrategy(PageLoadStrategy.EAGER);
 
@@ -62,9 +64,15 @@ public class CheckProxies {
         }
         options.setProfile(profile);
 
-        FirefoxDriver firefoxDriver = new FirefoxDriver(options);
+        FirefoxDriverService service = new GeckoDriverService.Builder()
+                .withLogFile(new File("geckologTEST.txt")).withLogLevel(FirefoxDriverLogLevel.TRACE)
+                .build();
+
+        FirefoxDriver firefoxDriver = new FirefoxDriver(service,options);
         return firefoxDriver;
 
     }
+
+
 
 }

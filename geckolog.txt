@@ -1,0 +1,14 @@
+1697563811681	geckodriver	INFO	Listening on 127.0.0.1:23483
+1697563811896	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... s" "http://127.0.0.1:16609/,http://localhost:16609/,http://[::1]:16609/" "-no-remote" "-profile" "/tmp/rust_mozprofilepKYSN7"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+1697563812927	Marionette	INFO	Marionette enabled
+1697563812994	Marionette	INFO	Listening on port 37791
+Read port: 37791
+WebDriver BiDi listening on ws://127.0.0.1:16609
+1697563813054	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: ({})
+DevTools listening on ws://127.0.0.1:16609/devtools/browser/d691930e-d1e8-4739-be0c-f29606502f73
+console.error: "update.locale" " file doesn't exist in either the application or GRE directories"
