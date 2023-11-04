@@ -31,7 +31,7 @@ public class MenuItems {
     //Menu Izbor broj 2
     public void checkRunningProxy(){
         CheckProxies checkProxies = new CheckProxies();
-        checkProxies.testStart();
+        checkProxies.testStart1();
     }
     //Menu izbor broj 3
     public void menuStopAndDeleteAllContainers(){

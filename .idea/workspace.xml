@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ecc83bf3-82a4-4ef3-9e4c-a15bd3f137a8" name="Changes" comment="16102023">
-      <change afterPath="$PROJECT_DIR$/foxyproxy.xpi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/geckolog.txt" afterDir="false" />
+    <list default="true" id="ecc83bf3-82a4-4ef3-9e4c-a15bd3f137a8" name="Changes" comment="17102023">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProxyPorts.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProxyPorts.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/menu/MenuItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/menu/MenuItems.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/proxyCheck/CheckProxies.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/proxyCheck/CheckProxies.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/proxyManager/CreatingProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/proxyManager/CreatingProxy.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,16 +37,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "/home/noname/IdeaProjects/ProxyManager",
-    "settings.build.tools.auto.reload": "ALL",
-    "settings.editor.selected.configurable": "build.tools"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/noname/IdeaProjects/ProxyManager&quot;,
+    &quot;settings.build.tools.auto.reload&quot;: &quot;ALL&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;build.tools&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -54,7 +56,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="JAR Application.ProxyManager-1.0-SNAPSHOT-jar-with-dependencies.jar">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="ProxyManager" />
@@ -74,8 +76,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JAR Application.ProxyManager-1.0-SNAPSHOT-jar-with-dependencies.jar" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JAR Application.ProxyManager-1.0-SNAPSHOT-jar-with-dependencies.jar" />
       </list>
     </recent_temporary>
   </component>
@@ -137,7 +139,14 @@
       <option name="project" value="LOCAL" />
       <updated>1697480338720</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="17102023">
+      <created>1697564352319</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1697564352319</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -158,7 +167,8 @@
     <MESSAGE value="24092023-12:40" />
     <MESSAGE value="15102023" />
     <MESSAGE value="16102023" />
-    <option name="LAST_COMMIT_MESSAGE" value="16102023" />
+    <MESSAGE value="17102023" />
+    <option name="LAST_COMMIT_MESSAGE" value="17102023" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ProxyManager$.ic" NAME=" Coverage Results" MODIFIED="1697478177045" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

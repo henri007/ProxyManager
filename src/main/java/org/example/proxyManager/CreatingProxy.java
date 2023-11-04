@@ -50,7 +50,7 @@ public class CreatingProxy {
     }
 
     private void startProxyContainer(){
-        Settings.runCommand("docker run --restart always --name proxy_10010 -v /home/noname/Downloads/openvpnconfigfiles:/openvpn --device=/dev/net/tun -p 10000:1080 --cap-add=NET_ADMIN -e \"OPENVPN_CONFIG_FILE=/openvpn/ad-leu.prod.surfshark.com_tcp.ovpn\" -e \"OPENVPN_USERNAME=YD4Vw5gKQfvdwa4q2jByWZN7\" -e \"OPENVPN_PASSWORD=6tKPGdcHsqTAjyVNLtK3P6A8\" -d jonoh/openvpn-socks");
+        Settings.runCommand("docker run --restart=always --name proxy_10010 -v /home/noname/Downloads/openvpnconfigfiles:/openvpn --device=/dev/net/tun -p 10000:1080 --cap-add=NET_ADMIN -e \"OPENVPN_CONFIG_FILE=/openvpn/ad-leu.prod.surfshark.com_tcp.ovpn\" -e \"OPENVPN_USERNAME=YD4Vw5gKQfvdwa4q2jByWZN7\" -e \"OPENVPN_PASSWORD=6tKPGdcHsqTAjyVNLtK3P6A8\" -d jonoh/openvpn-socks");
     }
 
     private String runContainerString(String nameOfConfigFile,int port){
