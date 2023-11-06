@@ -1,21 +1,18 @@
 package org.example.proxyCheck;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.bouncycastle.math.ec.custom.sec.SecT113Field;
+import org.example.capchaSolver.CapchaSolver;
 import org.example.logManager.ProxyContainer;
 import org.example.logManager.ProxyContainerManager;
 import org.example.settings.Settings;
+import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Cookie;
-import org.openqa.selenium.PageLoadStrategy;
+import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.*;
 
 import java.io.File;
 import java.net.InetSocketAddress;
 import java.net.Proxy;
-import java.nio.file.Path;
 import java.util.Random;
 
 public class CheckProxies {
@@ -64,13 +61,28 @@ public class CheckProxies {
         for(ProxyContainer proxyContainer : ProxyContainerManager.proxyContainers){
             Proxy proxy = new Proxy(Proxy.Type.SOCKS,
                     new InetSocketAddress("127.0.0.1", proxyContainer.getPort()));
-
+            String userAgent = getRandomUserAgent();
             try{
-                document = Jsoup.connect("https://www.azlyrics.com/").userAgent(getRandomUserAgent()).proxy(proxy).get();
+                document = Jsoup.connect("https://www.azlyrics.com/").userAgent(userAgent).proxy(proxy).get();
                 //System.out.println(document.body());
 
                 if(document.body().text().contains("Our systems have detected unusual activity from your IP address (computer network).")){
-                    System.out.println(proxyContainer.getPort() +" ne radi");
+                    CapchaSolver.proxiesThatNeedCapchaSolver.add(proxyContainer.getPort());
+                    System.out.println(proxyContainer.getPort()+" ne radi");
+
+                        CapchaSolver capchaSolver = new CapchaSolver();
+
+//TEST
+                    String url = "https://b.azlyrics.com/?u=/"; // Replace with the URL of the website you want to connect to
+                    Connection.Response response = Jsoup.connect(url).userAgent(userAgent).proxy(proxy)
+                            .method(Connection.Method.POST).data("g-recaptcha-response",capchaSolver.getSolvedRecapchaToken())
+                            .execute();
+                    System.out.println("Recapcha za "+proxyContainer.getPort()+" uspješno rješena");
+
+
+
+
+   //TEST
                 }else{
                     System.out.println(proxyContainer.getPort()+" radi");
                 }
@@ -79,6 +91,7 @@ public class CheckProxies {
             }
 
         }
+
     }
 
     public String getRandomUserAgent(){
@@ -99,7 +112,7 @@ public class CheckProxies {
         }
     }
 
-    private FirefoxDriver getFirefoxDriver(String proxyAddress, int proxyPort){
+    public FirefoxDriver getFirefoxDriver(String proxyAddress, int proxyPort){
         FirefoxProfile profile = new FirefoxProfile();
         profile.setPreference("network.proxy.type", 1); // Manual proxy configuration
         profile.setPreference("network.proxy.socks", proxyAddress);
@@ -107,7 +120,8 @@ public class CheckProxies {
 
 
         FirefoxOptions options = new FirefoxOptions();
-        options.setPageLoadStrategy(PageLoadStrategy.EAGER);
+      //  options.setPageLoadStrategy(PageLoadStrategy.EAGER);
+        options.addPreference("network.cookie.cookieBehavior", 0); // 0: Accept all cookies
 
         //Postavlja FIrefox u headless mode
         if(false){

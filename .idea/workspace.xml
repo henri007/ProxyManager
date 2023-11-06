@@ -4,14 +4,16 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ecc83bf3-82a4-4ef3-9e4c-a15bd3f137a8" name="Changes" comment="17102023">
+    <list default="true" id="ecc83bf3-82a4-4ef3-9e4c-a15bd3f137a8" name="Changes" comment="04112023">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/capchaSolver/CapSolver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/capchaSolver/CapchaSolver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/capchaSolver/Solution.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProxyPorts.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProxyPorts.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/geckolog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/geckolog.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/menu/MenuItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/menu/MenuItems.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/proxyCheck/CheckProxies.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/proxyCheck/CheckProxies.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/proxyManager/CreatingProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/proxyManager/CreatingProxy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/settings/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/settings/Settings.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +148,14 @@
       <option name="project" value="LOCAL" />
       <updated>1697564352319</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="04112023">
+      <created>1699096829267</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1699096829267</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -168,7 +177,8 @@
     <MESSAGE value="15102023" />
     <MESSAGE value="16102023" />
     <MESSAGE value="17102023" />
-    <option name="LAST_COMMIT_MESSAGE" value="17102023" />
+    <MESSAGE value="04112023" />
+    <option name="LAST_COMMIT_MESSAGE" value="04112023" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ProxyManager$.ic" NAME=" Coverage Results" MODIFIED="1697478177045" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

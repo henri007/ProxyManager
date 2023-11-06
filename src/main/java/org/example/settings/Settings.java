@@ -8,6 +8,8 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import com.fasterxml.jackson.databind.ObjectMapper; // version 2.11.1
+import org.jsoup.Connection;
+import org.jsoup.Jsoup;
 
 public class Settings {
 
@@ -21,6 +23,12 @@ public class Settings {
     public static ArrayList<String> vpnConfigFiles = new ArrayList<String>();
 
     public static final String ADDRESS_OF_PROXY_SERVER="127.0.0.1";
+
+    public static final String AZLYRICS_SITE_KEY="6Le3KzMUAAAAAILzez0f7PnFiFboGPKt0qpkINXw";
+
+   public static final String AZLYRICS_LINK="https://b.azlyrics.com/?u=/";
+
+    public static final String CAPCHA_SOLVER_API_KEY="CAP-DD3AF9A21FD4242502CDFA0B5995ADB7";
     public static void initalizeSettings(){
 
         initializeSettingsFile();
@@ -61,6 +69,47 @@ public class Settings {
             return e.getMessage();
         }
         return "null";
+    }
+
+    public static String getRecapchaTokenFromKeyboard(){
+        BufferedReader reader = new BufferedReader(
+                new InputStreamReader(System.in));
+
+        System.out.println("Input recapcha token");
+        // Reading data using readLine
+        String token =null;
+        try{
+            token = reader.readLine();
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+        return token;
+    }
+
+    public static void solvedRechapchaToken(){
+
+        String token;
+
+        try{
+            Connection.Response response = Jsoup.connect("https://api.capsolver.com/createTask")
+                    .method(Connection.Method.POST)
+                    .header("Content-Type","application/json")
+                    .requestBody("{\n" +
+                            "  \"clientKey\":\"" + CAPCHA_SOLVER_API_KEY + "\",\n" +
+                            "  \"task\": {\n" +
+                            "    \"type\": \"ReCaptchaV2TaskProxyLess\",\n" +
+                            "    \"websiteURL\": \"" + AZLYRICS_LINK + "\",\n" +
+                            "    \"websiteKey\": \"" + AZLYRICS_SITE_KEY + "\"\n" +
+                            "  }\n" +
+                            "}")
+                    .ignoreContentType(true)
+                    .execute();
+
+            System.out.println(response.body());
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+
     }
 
 
