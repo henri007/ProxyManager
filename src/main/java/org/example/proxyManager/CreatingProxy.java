@@ -27,8 +27,9 @@ public class CreatingProxy {
 
         for(int i=0; i<numberOfProxies;i++){
            // Settings.runCommand(runContainerString(Settings.vpnConfigFiles.get(i),ports[i]));
-            String idOfStartedContainer=Settings.runProxyContainerWithResponse(runContainerString(Settings.vpnConfigFiles.get(i),ports[i]));
-            System.out.println(idOfStartedContainer);
+            String configFile=randomConfigVpnFile();
+            String idOfStartedContainer=Settings.runProxyContainerWithResponse(runContainerString(configFile,ports[i]));
+            System.out.println(idOfStartedContainer+" : "+configFile);
             proxyContainerManager.addProxyContainer(new ProxyContainer(idOfStartedContainer,ports[i]));
         }
 
@@ -38,15 +39,13 @@ public class CreatingProxy {
     }
 
     //Dohvaća listu imena config fajlova
-    private HashSet<String> randomConfigVpnFile(int numberOfProxies){
-        HashSet<String> proxyConfigFiles=new HashSet<String>();
-        Random rand = new Random();
-        while (proxyConfigFiles.size()<numberOfProxies){
-            //OD svih učitanih config fajlova, uzima random broj od 1 do numberOfProxies
-          proxyConfigFiles.add(Settings.vpnConfigFiles.get(rand.nextInt(((Settings.numberOfConfigFilesInArray-1) - 0) + 1) + 0));
+    private String randomConfigVpnFile(){
 
-        }
-        return proxyConfigFiles;
+        Random rand = new Random();
+
+            //OD svih učitanih config fajlova, uzima random broj od 1 do numberOfProxies
+
+        return Settings.vpnConfigFiles.get(rand.nextInt(((Settings.numberOfConfigFilesInArray-1) - 0) + 1) + 0);
     }
 
     private void startProxyContainer(){
@@ -55,7 +54,7 @@ public class CreatingProxy {
 
     private String runContainerString(String nameOfConfigFile,int port){
         String run;
-        run = String.format("docker run --name proxy_%d " +
+        run = String.format("docker run --restart always --name proxy_%d " +
                 "-v %s:/openvpn " +
                 "--device=/dev/net/tun -p %d:1080 --cap-add=NET_ADMIN " +
                 "-e \"OPENVPN_CONFIG_FILE=/openvpn/%s\" " +

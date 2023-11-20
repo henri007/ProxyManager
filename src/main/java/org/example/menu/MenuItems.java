@@ -4,7 +4,6 @@ import org.example.logManager.ProxyContainer;
 import org.example.logManager.ProxyContainerManager;
 import org.example.proxyCheck.CheckProxies;
 import org.example.proxyManager.CreatingProxy;
-import org.example.proxyManager.MonitorDockers;
 import org.example.proxyManager.StopAndDeleteContainers;
 import org.example.settings.Settings;
 
@@ -31,7 +30,17 @@ public class MenuItems {
     //Menu Izbor broj 2
     public void checkRunningProxy(){
         CheckProxies checkProxies = new CheckProxies();
-        checkProxies.testStart1();
+        checkProxies.testStart();
+
+        String choise="test";
+
+        while(!choise.equals("exit")) {
+            System.out.println("Pokrecem nadzor proxya. Provjeravam svakih sat vremena da li su svi ok");
+            System.out.println("Za prekid upiši \"exit\"");
+            Scanner keyboard = new Scanner(System.in);
+            choise = keyboard.nextLine();
+            System.out.println("Test");
+        }
     }
     //Menu izbor broj 3
     public void menuStopAndDeleteAllContainers(){

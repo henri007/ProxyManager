@@ -3,7 +3,6 @@ package org.example.proxyCheck;
 import org.example.capchaSolver.CapchaSolver;
 import org.example.logManager.ProxyContainer;
 import org.example.logManager.ProxyContainerManager;
-import org.example.settings.Settings;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -40,22 +39,9 @@ public class CheckProxies {
     };
 
 
+
+
     public void testStart(){
-
-
-
-        for(ProxyContainer proxyContainer : ProxyContainerManager.proxyContainers){
-            FirefoxDriver driver = getFirefoxDriver(Settings.ADDRESS_OF_PROXY_SERVER,proxyContainer.getPort());
-
-            if(isProxyWorkingOnAZLyrics(driver)){
-                System.out.println(proxyContainer.getPort()+" radi");
-            }else{
-                System.out.println(proxyContainer.getPort()+" ne radi");
-            }
-        }
-    }
-
-    public void testStart1(){
 
         Document document;
         for(ProxyContainer proxyContainer : ProxyContainerManager.proxyContainers){
